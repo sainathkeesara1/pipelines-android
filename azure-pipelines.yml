@@ -48,5 +48,6 @@ steps:
     regionName: 'ap-south-1'
     bucketName: 'fire-trios'
     sourceFolder: '$(build.artifactStagingDirectory)'
-    globExpressions: '*.apk'
+    globExpressions: '**/*.apk'
     targetFolder: 'ReactCTO/$(Build.Buildid)'
+    createBucket: true
