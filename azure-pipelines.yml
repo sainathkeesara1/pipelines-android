@@ -20,18 +20,18 @@ steps:
     tasks: 'assembleDebug test'
   displayName: gradlew assembleDebug test
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.apk'
-    targetFolder: '$(build.artifactStagingDirectory)'
-  displayName: Copy .apk files to artifact staging directory
+#- task: CopyFiles@2
+#  inputs:
+#    contents: '**/*.apk'
+#    targetFolder: '$(build.artifactStagingDirectory)'
+#  displayName: Copy .apk files to artifact staging directory
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: '$(build.artifactStagingDirectory)'
-    artifactName: 'drop'
-    artifactType: 'container'
-  displayName: Publish artifacts
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    pathToPublish: '$(build.artifactStagingDirectory)'
+#    artifactName: 'drop'
+#    artifactType: 'container'
+#  displayName: Publish artifacts
 
 - task: S3Upload@1
   inputs:
