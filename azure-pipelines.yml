@@ -33,22 +33,22 @@ steps:
 #    artifactType: 'container'
 #  displayName: Publish artifacts
 
-- task: S3Upload@1
-  inputs:
-    awsCredentials: 'S3'
-    regionName: 'ap-south-1'
-    bucketName: 'fire-trios'
-    sourceFolder: '$(build.artifactStagingDirectory)'
-    globExpressions: '**/*.apk'
-    targetFolder: 'ReactCTO/'
+#- task: S3Upload@1
+#  inputs:
+#    awsCredentials: 'S3'
+#    regionName: 'ap-south-1'
+#    bucketName: 'fire-trios'
+#    sourceFolder: '$(build.artifactStagingDirectory)'
+#    globExpressions: '**/*.apk'
+#    targetFolder: 'ReactCTO/'
 
-- task: S3Upload@1
-  inputs:
-    awsCredentials: 'S3'
-    regionName: 'ap-south-1'
-    bucketName: 'fire-trios'
-    sourceFolder: '$(build.artifactStagingDirectory)'
-    globExpressions: '**/*.apk'
-    targetFolder: 'ReactCTO/$(Build.Buildid)'
-    createBucket: true
+#- task: S3Upload@1
+#  inputs:
+#    awsCredentials: 'S3'
+#    regionName: 'ap-south-1'
+#    bucketName: 'fire-trios'
+#    sourceFolder: '$(build.artifactStagingDirectory)'
+#    globExpressions: '**/*.apk'
+#    targetFolder: 'ReactCTO/$(Build.Buildid)'
+#    createBucket: true
 
