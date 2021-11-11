@@ -51,3 +51,4 @@ steps:
     globExpressions: '**/*.apk'
     targetFolder: 'ReactCTO/$(Build.Buildid)'
     createBucket: true
+
