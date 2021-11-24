@@ -29,7 +29,7 @@ steps:
   inputs:
     apkFiles: '**/*.apk'
     apksignerKeystoreFile: 'Keystore.p12'
-    apksignerKeystorePassword: '$(key.password)'
+    apksignerKeystorePassword: '$(key.passwords)'
     apksignerKeystoreAlias: 'sampleapp'
 - task: CopyFiles@2
   inputs:
