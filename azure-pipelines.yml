@@ -28,7 +28,7 @@ steps:
   displayName: 'android signing'
   inputs:
     apkFiles: '**/*.apk'
-    apksignerKeystoreFile: 'Keystore.p12'
+    apksignerKeystoreFile: 'release.keystore'
     apksignerKeystorePassword: '$(key.passwords)'
     apksignerKeystoreAlias: 'sampleapp'
 - task: CopyFiles@2
