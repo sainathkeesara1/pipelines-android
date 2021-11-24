@@ -20,11 +20,29 @@ steps:
     tasks: 'assembleDebug test'
   displayName: gradlew assembleDebug test
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'Keystore.p12'
+
+- task: AndroidSigning@3
+  displayName: 'android signing'
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'Keystore.p12'
+    apksignerKeystorePassword: '$(key.password)'
+    apksignerKeystoreAlias: 'sampleapp'
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
     targetFolder: '$(build.artifactStagingDirectory)'
   displayName: Copy .apk files to artifact staging directory
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(build.artifactStagingDirectory)'
+    artifactName: 'drop'
+    artifactType: 'container'
+  displayName: Publish artifacts
 
 #- task: PublishBuildArtifacts@1
 #  inputs:
