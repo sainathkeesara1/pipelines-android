@@ -6,6 +6,13 @@
 pool:
   vmImage: 'macOS-10.15'
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo $(key.passwords)
 steps:
 - task: Gradle@2
   inputs:
